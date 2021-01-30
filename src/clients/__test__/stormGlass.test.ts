@@ -67,7 +67,7 @@ describe('StormGlass client', () => {
 
     //Then
     expect(response).rejects.toThrow(
-      'Unexpected error when trying to cmmunicate to StormGlass: Network Error'
+      'Unexpected error when trying to communicate to StormGlass: Network Error'
     );
   });
 
