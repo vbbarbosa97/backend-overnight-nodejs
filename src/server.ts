@@ -5,6 +5,7 @@ import { Application } from 'express';
 import { ForecastController } from './controllers/forecast';
 import { BeachesController } from './controllers/beaches';
 import * as database from '@src/database';
+
 export class SetupServer extends Server {
   constructor(private port = 3000) {
     super();
@@ -37,5 +38,11 @@ export class SetupServer extends Server {
 
   public getApp(): Application {
     return this.app;
+  }
+
+  public start(): void {
+    this.app.listen(this.port, () => {
+      console.info('Server listening of port:', this.port);
+    });
   }
 }
